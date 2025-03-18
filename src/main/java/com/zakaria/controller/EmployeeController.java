@@ -43,12 +43,12 @@ public class EmployeeController {
 	}
 
 	@DeleteMapping("/{id}")
-	public void deleteById(@PathVariable int id) {
+	public void deleteById(@PathVariable("id") int id) {
 		service.deleteById(id);
 	}
 
 	@PutMapping("/{id}")
-	public Employee updateEmp(@PathVariable int id, @RequestBody Employee employee) {
+	public Employee updateEmp(@PathVariable("id") int id, @RequestBody Employee employee) {
 		Employee updated = service.updateEmp(id, employee);
 		return updated;
 	}
